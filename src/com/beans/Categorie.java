@@ -1,14 +1,20 @@
 package com.beans;
 
+import java.util.ArrayList;
+
 public class Categorie {
 	private String id;
 	private String titre;
+	private ArrayList<Annonce> annonces;
 	
 	public String getId(){
-		return this.id;
+		return id;
 	}
 	public String getTitre(){
-		return this.titre;
+		return titre;
+	}
+	public ArrayList<Annonce> getAnnonce(){
+		return annonces;
 	}
 	
 	public void setId(String id){
@@ -17,5 +23,9 @@ public class Categorie {
 	
 	public void setTitre(String titre){
 		this.titre = titre;
+	}
+	
+	public void setAnnonce(ArrayList<Annonce> annonces){
+		this.annonces = annonces;
 	}
 }

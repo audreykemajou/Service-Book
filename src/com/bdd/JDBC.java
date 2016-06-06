@@ -28,7 +28,7 @@ public class JDBC {
 			String  userName = "root";
 			String password = "SR03Eval";
 			Connection connexion = DriverManager.getConnection(url,userName,password);
-			System.out.println("Connexion �tablie");
+			System.out.println("Connexion établie");
 			
 			return connexion;
 		}
@@ -210,10 +210,156 @@ public class JDBC {
 			e.printStackTrace();
 		}
 	}
-	public static void rechercherAnnonceNom(){
+	
+	public static Adresse rechercherAdresse(String idAnnonce){
+		Adresse adresse = new Adresse();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM adresse WHERE annonce= '" + idAnnonce + "';");
+			if ( result.next()) {
+	            String id = result.getString( "id" );
+	            String rue = result.getString( "rue" );
+	            String ville = result.getString( "ville" );
+	            int code_postal = result.getInt( "code_postal" );
+	            
+	            adresse.setId(id);
+	            adresse.setRue(rue);
+	            adresse.setVille(ville);
+	            adresse.setCodePostal(code_postal);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return adresse;
+	}
+	
+	public static Annonce rechercherAnnonceNom(String nom){
+		Annonce annonce = new Annonce();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM annonce WHERE nom= '" + nom + "';");
+			if ( result.next()) {
+	            String idAnnonce = result.getString( "id" );
+	            String telephone = result.getString( "telephone" );
+	            Adresse adresse = rechercherAdresse(idAnnonce);
+	            
+	            annonce.setId(idAnnonce);
+	            annonce.setTelephone(telephone);
+	            annonce.setAdresse(adresse);
+	            annonce.setNom(nom);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return annonce;
+	}
+	
+	public static Annonce rechercherAnnonceId(String id){
+		Annonce annonce = new Annonce();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM annonce WHERE id= '" + id+ "';");
+			if ( result.next()) {
+	            String nom = result.getString( "nom" );
+	            String telephone = result.getString( "telephone" );
+	            Adresse adresse = rechercherAdresse(id);
+	            
+	            annonce.setId(id);
+	            annonce.setTelephone(telephone);
+	            annonce.setAdresse(adresse);
+	            annonce.setNom(nom);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return annonce;
+	}
+	
+	public static Annonce rechercherAnnonceIdCategorie(String idCategorie){
+		Annonce annonce = new Annonce();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM annonce WHERE categorie= '" + idCategorie+ "';");
+			if ( result.next()) {
+	            String nom = result.getString( "nom" );
+	            String telephone = result.getString( "telephone" );
+	            String id = result.getString( "id" );
+	            Adresse adresse = rechercherAdresse(id);
+	            
+	            annonce.setId(id);
+	            annonce.setTelephone(telephone);
+	            annonce.setAdresse(adresse);
+	            annonce.setNom(nom);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return annonce;
+	}
+	
+	public static ArrayList<Annonce> rechercherAnnonceVille( String ville){
+		ArrayList<Annonce> annonces = new ArrayList<Annonce>();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM adresse WHERE ville= '" + ville + "';");
+			if ( result.next()) {
+				String idAnnonce = result.getString( "annonce" );
+				Annonce annonce = rechercherAnnonceId(idAnnonce);
+	            
+	            annonces.add(annonce);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return annonces;
 		
 	}
-	public static void rechercherAnnonceVille(){
+	
+	public static ArrayList<Annonce> rechercherAnnonceCategorie( String titreCategorie){
+		ArrayList<Annonce> annonces = new ArrayList<Annonce>();
+		try{
+			Connection connexion = connectDB();
+		
+			Statement statement;
+			ResultSet result;
+			statement = connexion.createStatement();
+			result = statement.executeQuery("SELECT * FROM categorie WHERE titre= '" + titreCategorie + "';");
+			if ( result.next()) {
+				String idCategorie = result.getString( "id" );
+				Annonce annonce = rechercherAnnonceIdCategorie(idCategorie);
+	            
+	            annonces.add(annonce);
+	        }
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return annonces;
 		
 	}
 	  

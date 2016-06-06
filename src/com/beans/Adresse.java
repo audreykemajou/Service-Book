@@ -7,16 +7,16 @@ public class Adresse {
 	private int code_postal;
 	
 	public String getId(){
-		return this.id;
+		return id;
 	}
 	public String getRue(){
-		return this.rue;
+		return rue;
 	}
 	public String getVille(){
-		return this.ville;
+		return ville;
 	}
 	public int getCodePostal(){
-		return this.code_postal;
+		return code_postal;
 	}
 	
 	

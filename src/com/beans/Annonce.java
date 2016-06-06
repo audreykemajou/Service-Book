@@ -7,17 +7,17 @@ public class Annonce {
 	private Adresse adresse;
 	
 	public String getId(){
-		return this.id;
+		return id;
 	}
 	public String getNom(){
-		return this.nom;
+		return nom;
 	}
 	public String getTelephone(){
-		return this.telephone;
+		return telephone;
 	}
 	
 	public Adresse getAdresse(){
-		return this.adresse;
+		return adresse;
 	}
 	
 	public void setId(String id){
