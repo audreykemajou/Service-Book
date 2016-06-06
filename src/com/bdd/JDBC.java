@@ -45,7 +45,7 @@ public class JDBC {
 			int result;
 			
 			statement = connexion.createStatement();
-			result = statement.executeUpdate("INSERT INTO categorie (titre,annuaire) VALUES ('"+ titre +"','1')");
+			result = statement.executeUpdate("INSERT INTO categorie (titre,annuaire) VALUES ('"+ titre +"',1)");
 			if (connexion!=null){
 				try {
 	        	connexion.close();
