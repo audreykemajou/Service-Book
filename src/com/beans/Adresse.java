@@ -1,4 +1,4 @@
-package Annuaire.beans;
+package com.beans;
 
 public class Adresse {
 	private String id;
