@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Annuaire</display-name>
+  <display-name>clientCreateur</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -9,4 +9,76 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>GestionAnnuaire</servlet-name>
+    <servlet-class>com.servlet.GestionAnnuaire</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionAnnuaire</servlet-name>
+    <url-pattern>/gestionAnnuaire</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AfficherCategorie</servlet-name>
+    <servlet-class>com.servlet.AfficherCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AfficherCategorie</servlet-name>
+    <url-pattern>/afficherCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AfficherAnnonce</servlet-name>
+    <servlet-class>com.servlet.AfficherAnnonce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AfficherAnnonce</servlet-name>
+    <url-pattern>/afficherAnnonce</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifierCategorie</servlet-name>
+    <servlet-class>com.servlet.ModifierCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifierCategorie</servlet-name>
+    <url-pattern>/modifierCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CreerCategorie</servlet-name>
+    <servlet-class>com.servlet.CreerCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreerCategorie</servlet-name>
+    <url-pattern>/creerCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SupprimerCategorie</servlet-name>
+    <servlet-class>com.servlet.SupprimerCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupprimerCategorie</servlet-name>
+    <url-pattern>/supprimerCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModifierAnnonce</servlet-name>
+    <servlet-class>com.servlet.ModifierAnnonce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifierAnnonce</servlet-name>
+    <url-pattern>/modifierAnnonce</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CreerAnnonce</servlet-name>
+    <servlet-class>com.servlet.CreerAnnonce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreerAnnonce</servlet-name>
+    <url-pattern>/creerAnnonce</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SupprimerAnnonce</servlet-name>
+    <servlet-class>com.servlet.SupprimerAnnonce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupprimerAnnonce</servlet-name>
+    <url-pattern>/supprimerAnnonce</url-pattern>
+  </servlet-mapping>
 </web-app>
