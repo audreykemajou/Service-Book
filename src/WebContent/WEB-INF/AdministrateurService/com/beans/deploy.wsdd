@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AdministrateurService WSDL service -->
+
+  <service name="Administrateur" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://beans.com"/>
+      <parameter name="wsdlServiceElement" value="AdministrateurService"/>
+      <parameter name="schemaQualified" value="http://beans.com"/>
+      <parameter name="wsdlServicePort" value="Administrateur"/>
+      <parameter name="className" value="com.beans.Administrateur"/>
+      <parameter name="wsdlPortType" value="Administrateur"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://beans.com" name="modifierAdresse" qname="operNS:modifierAdresse" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rue" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ville" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:code_postal" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:annonce" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="creerCategorie" qname="operNS:creerCategorie" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titre" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="creerAnnonce" qname="operNS:creerAnnonce" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nom" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:telephone" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:categorie" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rue" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ville" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:code_postal" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="supprimerAdresse" qname="operNS:supprimerAdresse" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="supprimerAnnonce" qname="operNS:supprimerAnnonce" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="afficherAnnonces" qname="operNS:afficherAnnonces" returnQName="retNS:afficherAnnoncesReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="creerAdresse" qname="operNS:creerAdresse" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rue" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ville" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:code_postal" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:annonce" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="modifierAnnonce" qname="operNS:modifierAnnonce" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nom" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:telephone" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:categorie" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rue" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ville" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:code_postal" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="supprimerCategorie" qname="operNS:supprimerCategorie" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAnnonceNom" qname="operNS:rechercherAnnonceNom" returnQName="retNS:rechercherAnnonceNomReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nom" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAnnonceVille" qname="operNS:rechercherAnnonceVille" returnQName="retNS:rechercherAnnonceVilleReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ville" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" name="modifierCategorie" qname="operNS:modifierCategorie" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titre" type="tns:string"/>
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="afficherCategories" qname="operNS:afficherCategories" returnQName="retNS:afficherCategoriesReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAnnonceCategorie" qname="operNS:rechercherAnnonceCategorie" returnQName="retNS:rechercherAnnonceCategorieReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titreCategorie" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAdresseString" qname="operNS:rechercherAdresseString" returnQName="retNS:rechercherAdresseStringReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idAnnonce" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAnnonceIdCategorie" qname="operNS:rechercherAnnonceIdCategorie" returnQName="retNS:rechercherAnnonceIdCategorieReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idCategorie" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAnnonceIdString" qname="operNS:rechercherAnnonceIdString" returnQName="retNS:rechercherAnnonceIdStringReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idAnnonce" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherAdresseStringId" qname="operNS:rechercherAdresseStringId" returnQName="retNS:rechercherAdresseStringIdReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idAdresse" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://beans.com" xmlns:retNS="http://beans.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="rechercherCategorieString" qname="operNS:rechercherCategorieString" returnQName="retNS:rechercherCategorieStringReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://beans.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idCategorie" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="supprimerAdresse rechercherAdresseStringId supprimerCategorie rechercherAnnonceCategorie rechercherAnnonceIdCategorie modifierCategorie supprimerAnnonce creerAnnonce rechercherCategorieString rechercherAdresseString modifierAdresse afficherCategories rechercherAnnonceVille afficherAnnonces creerAdresse modifierAnnonce rechercherAnnonceIdString creerCategorie rechercherAnnonceNom"/>
+
+  </service>
+</deployment>

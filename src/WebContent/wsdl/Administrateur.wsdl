@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://beans.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://beans.com" xmlns:intf="http://beans.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://beans.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="modifierAdresse">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="rue" type="xsd:string"/>
+      <element name="ville" type="xsd:string"/>
+      <element name="code_postal" type="xsd:string"/>
+      <element name="annonce" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifierAdresseResponse">
+    <complexType/>
+   </element>
+   <element name="creerCategorie">
+    <complexType>
+     <sequence>
+      <element name="titre" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creerCategorieResponse">
+    <complexType/>
+   </element>
+   <element name="creerAnnonce">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="telephone" type="xsd:string"/>
+      <element name="categorie" type="xsd:string"/>
+      <element name="rue" type="xsd:string"/>
+      <element name="ville" type="xsd:string"/>
+      <element name="code_postal" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creerAnnonceResponse">
+    <complexType/>
+   </element>
+   <element name="supprimerAdresse">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="supprimerAdresseResponse">
+    <complexType/>
+   </element>
+   <element name="supprimerAnnonce">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="supprimerAnnonceResponse">
+    <complexType/>
+   </element>
+   <element name="afficherAnnonces">
+    <complexType/>
+   </element>
+   <element name="afficherAnnoncesResponse">
+    <complexType>
+     <sequence>
+      <element name="afficherAnnoncesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creerAdresse">
+    <complexType>
+     <sequence>
+      <element name="rue" type="xsd:string"/>
+      <element name="ville" type="xsd:string"/>
+      <element name="code_postal" type="xsd:string"/>
+      <element name="annonce" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="creerAdresseResponse">
+    <complexType/>
+   </element>
+   <element name="modifierAnnonce">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+      <element name="nom" type="xsd:string"/>
+      <element name="telephone" type="xsd:string"/>
+      <element name="categorie" type="xsd:string"/>
+      <element name="rue" type="xsd:string"/>
+      <element name="ville" type="xsd:string"/>
+      <element name="code_postal" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifierAnnonceResponse">
+    <complexType/>
+   </element>
+   <element name="supprimerCategorie">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="supprimerCategorieResponse">
+    <complexType/>
+   </element>
+   <element name="rechercherAnnonceNom">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceNomResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAnnonceNomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceVille">
+    <complexType>
+     <sequence>
+      <element name="ville" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceVilleResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAnnonceVilleReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifierCategorie">
+    <complexType>
+     <sequence>
+      <element name="titre" type="xsd:string"/>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modifierCategorieResponse">
+    <complexType/>
+   </element>
+   <element name="afficherCategories">
+    <complexType/>
+   </element>
+   <element name="afficherCategoriesResponse">
+    <complexType>
+     <sequence>
+      <element name="afficherCategoriesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceCategorie">
+    <complexType>
+     <sequence>
+      <element name="titreCategorie" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceCategorieResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAnnonceCategorieReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAdresseString">
+    <complexType>
+     <sequence>
+      <element name="idAnnonce" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAdresseStringResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAdresseStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceIdCategorie">
+    <complexType>
+     <sequence>
+      <element name="idCategorie" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceIdCategorieResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAnnonceIdCategorieReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceIdString">
+    <complexType>
+     <sequence>
+      <element name="idAnnonce" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAnnonceIdStringResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAnnonceIdStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAdresseStringId">
+    <complexType>
+     <sequence>
+      <element name="idAdresse" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherAdresseStringIdResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherAdresseStringIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherCategorieString">
+    <complexType>
+     <sequence>
+      <element name="idCategorie" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rechercherCategorieStringResponse">
+    <complexType>
+     <sequence>
+      <element name="rechercherCategorieStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="rechercherAnnonceIdCategorieResponse">
+
+      <wsdl:part element="impl:rechercherAnnonceIdCategorieResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceIdStringResponse">
+
+      <wsdl:part element="impl:rechercherAnnonceIdStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerCategorieResponse">
+
+      <wsdl:part element="impl:creerCategorieResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerAdresseResponse">
+
+      <wsdl:part element="impl:creerAdresseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceIdCategorieRequest">
+
+      <wsdl:part element="impl:rechercherAnnonceIdCategorie" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afficherAnnoncesRequest">
+
+      <wsdl:part element="impl:afficherAnnonces" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAdresseStringIdResponse">
+
+      <wsdl:part element="impl:rechercherAdresseStringIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerAnnonceRequest">
+
+      <wsdl:part element="impl:creerAnnonce" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afficherAnnoncesResponse">
+
+      <wsdl:part element="impl:afficherAnnoncesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afficherCategoriesRequest">
+
+      <wsdl:part element="impl:afficherCategories" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceCategorieResponse">
+
+      <wsdl:part element="impl:rechercherAnnonceCategorieResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerCategorieRequest">
+
+      <wsdl:part element="impl:creerCategorie" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerCategorieResponse">
+
+      <wsdl:part element="impl:supprimerCategorieResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerAnnonceResponse">
+
+      <wsdl:part element="impl:supprimerAnnonceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierAdresseRequest">
+
+      <wsdl:part element="impl:modifierAdresse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerAnnonceResponse">
+
+      <wsdl:part element="impl:creerAnnonceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="creerAdresseRequest">
+
+      <wsdl:part element="impl:creerAdresse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceVilleResponse">
+
+      <wsdl:part element="impl:rechercherAnnonceVilleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afficherCategoriesResponse">
+
+      <wsdl:part element="impl:afficherCategoriesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceNomResponse">
+
+      <wsdl:part element="impl:rechercherAnnonceNomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAdresseStringRequest">
+
+      <wsdl:part element="impl:rechercherAdresseString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerAdresseResponse">
+
+      <wsdl:part element="impl:supprimerAdresseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceNomRequest">
+
+      <wsdl:part element="impl:rechercherAnnonceNom" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerCategorieRequest">
+
+      <wsdl:part element="impl:supprimerCategorie" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierAdresseResponse">
+
+      <wsdl:part element="impl:modifierAdresseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerAdresseRequest">
+
+      <wsdl:part element="impl:supprimerAdresse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherCategorieStringRequest">
+
+      <wsdl:part element="impl:rechercherCategorieString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierCategorieRequest">
+
+      <wsdl:part element="impl:modifierCategorie" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceVilleRequest">
+
+      <wsdl:part element="impl:rechercherAnnonceVille" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherCategorieStringResponse">
+
+      <wsdl:part element="impl:rechercherCategorieStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceIdStringRequest">
+
+      <wsdl:part element="impl:rechercherAnnonceIdString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierAnnonceRequest">
+
+      <wsdl:part element="impl:modifierAnnonce" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAdresseStringResponse">
+
+      <wsdl:part element="impl:rechercherAdresseStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierAnnonceResponse">
+
+      <wsdl:part element="impl:modifierAnnonceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAdresseStringIdRequest">
+
+      <wsdl:part element="impl:rechercherAdresseStringId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="supprimerAnnonceRequest">
+
+      <wsdl:part element="impl:supprimerAnnonce" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modifierCategorieResponse">
+
+      <wsdl:part element="impl:modifierCategorieResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rechercherAnnonceCategorieRequest">
+
+      <wsdl:part element="impl:rechercherAnnonceCategorie" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Administrateur">
+
+      <wsdl:operation name="modifierAdresse">
+
+         <wsdl:input message="impl:modifierAdresseRequest" name="modifierAdresseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifierAdresseResponse" name="modifierAdresseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerCategorie">
+
+         <wsdl:input message="impl:creerCategorieRequest" name="creerCategorieRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:creerCategorieResponse" name="creerCategorieResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerAnnonce">
+
+         <wsdl:input message="impl:creerAnnonceRequest" name="creerAnnonceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:creerAnnonceResponse" name="creerAnnonceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerAdresse">
+
+         <wsdl:input message="impl:supprimerAdresseRequest" name="supprimerAdresseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:supprimerAdresseResponse" name="supprimerAdresseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerAnnonce">
+
+         <wsdl:input message="impl:supprimerAnnonceRequest" name="supprimerAnnonceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:supprimerAnnonceResponse" name="supprimerAnnonceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afficherAnnonces">
+
+         <wsdl:input message="impl:afficherAnnoncesRequest" name="afficherAnnoncesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:afficherAnnoncesResponse" name="afficherAnnoncesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerAdresse">
+
+         <wsdl:input message="impl:creerAdresseRequest" name="creerAdresseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:creerAdresseResponse" name="creerAdresseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifierAnnonce">
+
+         <wsdl:input message="impl:modifierAnnonceRequest" name="modifierAnnonceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifierAnnonceResponse" name="modifierAnnonceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerCategorie">
+
+         <wsdl:input message="impl:supprimerCategorieRequest" name="supprimerCategorieRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:supprimerCategorieResponse" name="supprimerCategorieResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceNom">
+
+         <wsdl:input message="impl:rechercherAnnonceNomRequest" name="rechercherAnnonceNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAnnonceNomResponse" name="rechercherAnnonceNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceVille">
+
+         <wsdl:input message="impl:rechercherAnnonceVilleRequest" name="rechercherAnnonceVilleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAnnonceVilleResponse" name="rechercherAnnonceVilleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifierCategorie">
+
+         <wsdl:input message="impl:modifierCategorieRequest" name="modifierCategorieRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modifierCategorieResponse" name="modifierCategorieResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afficherCategories">
+
+         <wsdl:input message="impl:afficherCategoriesRequest" name="afficherCategoriesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:afficherCategoriesResponse" name="afficherCategoriesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceCategorie">
+
+         <wsdl:input message="impl:rechercherAnnonceCategorieRequest" name="rechercherAnnonceCategorieRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAnnonceCategorieResponse" name="rechercherAnnonceCategorieResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAdresseString">
+
+         <wsdl:input message="impl:rechercherAdresseStringRequest" name="rechercherAdresseStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAdresseStringResponse" name="rechercherAdresseStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceIdCategorie">
+
+         <wsdl:input message="impl:rechercherAnnonceIdCategorieRequest" name="rechercherAnnonceIdCategorieRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAnnonceIdCategorieResponse" name="rechercherAnnonceIdCategorieResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceIdString">
+
+         <wsdl:input message="impl:rechercherAnnonceIdStringRequest" name="rechercherAnnonceIdStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAnnonceIdStringResponse" name="rechercherAnnonceIdStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAdresseStringId">
+
+         <wsdl:input message="impl:rechercherAdresseStringIdRequest" name="rechercherAdresseStringIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherAdresseStringIdResponse" name="rechercherAdresseStringIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherCategorieString">
+
+         <wsdl:input message="impl:rechercherCategorieStringRequest" name="rechercherCategorieStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rechercherCategorieStringResponse" name="rechercherCategorieStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AdministrateurSoapBinding" type="impl:Administrateur">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="modifierAdresse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifierAdresseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifierAdresseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerCategorie">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="creerCategorieRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="creerCategorieResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerAnnonce">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="creerAnnonceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="creerAnnonceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerAdresse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="supprimerAdresseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="supprimerAdresseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerAnnonce">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="supprimerAnnonceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="supprimerAnnonceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afficherAnnonces">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="afficherAnnoncesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="afficherAnnoncesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="creerAdresse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="creerAdresseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="creerAdresseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifierAnnonce">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifierAnnonceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifierAnnonceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="supprimerCategorie">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="supprimerCategorieRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="supprimerCategorieResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAnnonceNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAnnonceNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceVille">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAnnonceVilleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAnnonceVilleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modifierCategorie">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modifierCategorieRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modifierCategorieResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afficherCategories">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="afficherCategoriesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="afficherCategoriesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceCategorie">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAnnonceCategorieRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAnnonceCategorieResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAdresseString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAdresseStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAdresseStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceIdCategorie">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAnnonceIdCategorieRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAnnonceIdCategorieResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAnnonceIdString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAnnonceIdStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAnnonceIdStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherAdresseStringId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherAdresseStringIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherAdresseStringIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rechercherCategorieString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rechercherCategorieStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rechercherCategorieStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AdministrateurService">
+
+      <wsdl:port binding="impl:AdministrateurSoapBinding" name="Administrateur">
+
+         <wsdlsoap:address location="http://localhost:8080/webServices/services/Administrateur"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
