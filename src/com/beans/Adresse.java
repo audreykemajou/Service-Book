@@ -8,7 +8,7 @@
 package com.beans;
 
 public class Adresse  implements java.io.Serializable {
-    private java.lang.String codePostal;
+    private int codePostal;
 
     private java.lang.String id;
 
@@ -20,7 +20,7 @@ public class Adresse  implements java.io.Serializable {
     }
 
     public Adresse(
-           java.lang.String codePostal,
+           int codePostal,
            java.lang.String id,
            java.lang.String rue,
            java.lang.String ville) {
@@ -36,7 +36,7 @@ public class Adresse  implements java.io.Serializable {
      * 
      * @return codePostal
      */
-    public java.lang.String getCodePostal() {
+    public int getCodePostal() {
         return codePostal;
     }
 
@@ -46,7 +46,7 @@ public class Adresse  implements java.io.Serializable {
      * 
      * @param codePostal
      */
-    public void setCodePostal(java.lang.String codePostal) {
+    public void setCodePostal(int codePostal) {
         this.codePostal = codePostal;
     }
 
@@ -122,9 +122,7 @@ public class Adresse  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.codePostal==null && other.getCodePostal()==null) || 
-             (this.codePostal!=null &&
-              this.codePostal.equals(other.getCodePostal()))) &&
+            this.codePostal == other.getCodePostal() &&
             ((this.id==null && other.getId()==null) || 
              (this.id!=null &&
               this.id.equals(other.getId()))) &&
@@ -145,9 +143,7 @@ public class Adresse  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getCodePostal() != null) {
-            _hashCode += getCodePostal().hashCode();
-        }
+        _hashCode += getCodePostal();
         if (getId() != null) {
             _hashCode += getId().hashCode();
         }
@@ -170,8 +166,8 @@ public class Adresse  implements java.io.Serializable {
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("codePostal");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans.com", "codePostal"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(true);
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");

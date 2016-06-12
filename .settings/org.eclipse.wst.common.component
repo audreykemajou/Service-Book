@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="clientCreateur">
+    <wb-module deploy-name="clientAfficheur">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="clientCreateur"/>
-        <property name="java-output-path" value="/clientCreateur/build/classes"/>
+        <property name="context-root" value="clientAfficheur"/>
+        <property name="java-output-path" value="/clientAfficheur/build/classes"/>
     </wb-module>
 </project-modules>
